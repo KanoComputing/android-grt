@@ -2,6 +2,10 @@
 
 Android JNI bindings for GRT
 
+## Using it
+
+You can copy the prebuilt libraries from the `libs` directory to your project's directory. Then use the classes in `jni/com/kano/grt`.
+
 ## Supported API
 
 Only a subset of the GRT API has bindings defined through JNI. Please check the `jni/com/kano/grt` to check the supported API
