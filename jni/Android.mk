@@ -25,6 +25,8 @@ LOCAL_SRC_FILES += $(wildcard $(LOCAL_PATH)/GRT/ClassificationModules/*/*.cpp) \
 
 LOCAL_SRC_FILES += ../jni/com_kano_grt_TimeSeriesClassificationData.cxx
 LOCAL_SRC_FILES += ../jni/com_kano_grt_DTW.cxx
+LOCAL_SRC_FILES += ../jni/com_kano_grt_KMeansQuantizer.cxx
+LOCAL_SRC_FILES += ../jni/com_kano_grt_HMM.cxx
 LOCAL_SRC_FILES += ../jni/matrix.cxx
 
 LOCAL_CPPFLAGS += -std=c++11

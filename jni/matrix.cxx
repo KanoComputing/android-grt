@@ -9,8 +9,8 @@ GRT::MatrixFloat JNIMatrix::sampleFromJObjectArray(JNIEnv *jenv, jobjectArray ar
         jdouble *doubleArray = jenv->GetDoubleArrayElements(value, 0);
         int rowLength = jenv->GetArrayLength(value);
         for (unsigned int j = 0; j < rowLength; j++) {
-        jdouble item = doubleArray[j];
-        vector.push_back((double) item);
+            jdouble item = doubleArray[j];
+            vector.push_back((double) item);
         }
         sample.push_back(vector);
         vector.clear();
