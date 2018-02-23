@@ -29,10 +29,14 @@ JNIEXPORT jint JNICALL Java_com_kano_grt_HMM_getPredictedClassLabelNative(JNIEnv
     return (jint) result;
 }
 
-JNIEXPORT jdouble JNICALL Java_com_kano_grt_HMM_getMaximumLikelihoodNative(JNIEnv *jenv, jobject obj){
+JNIEXPORT jdoubleArray JNICALL Java_com_kano_grt_HMM_getClassLikelihoodsNative(JNIEnv *jenv, jobject obj){
     GRT::HMM *hmm = Handle<GRT::HMM>::getHandle(jenv, obj);
-    double result = hmm->getMaximumLikelihood();
-    return (jdouble) result;
+    GRT::VectorFloat vectorReturn = hmm->getClassLikelihoods();
+    jdoubleArray result = jenv->NewDoubleArray(vectorReturn.getSize());
+    for (unsigned int i = 0; i < vectorReturn.getSize(); i++) {
+        jenv->SetDoubleArrayRegion(result, i, vectorReturn.getSize(), (const jdouble*) &vectorReturn[i] );
+    }
+    return result;
 }
 
 

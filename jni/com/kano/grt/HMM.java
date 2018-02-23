@@ -12,7 +12,7 @@ public class HMM {
     public boolean train(TimeSeriesClassificationData sample) { return trainNative(sample); }
     public boolean predict(double[][] data) { return predictNative(data); }
     public int getPredictedClassLabel() { return getPredictedClassLabelNative(); }
-    public double getMaximumLikelihood() { return getMaximumLikelihoodNative(); }
+    public double[] getClassLikelihoods() { return getClassLikelihoodsNative(); }
     public boolean setHMMType(int n) { return setHMMTypeNative(n); }
     public boolean setNumStates(int n) { return setNumStatesNative(n); }
     public boolean setNumSymbols(int n) { return setNumSymbolsNative(n); }
@@ -25,7 +25,7 @@ public class HMM {
     private native boolean trainNative(TimeSeriesClassificationData sample);
     private native boolean predictNative(double[][] data);
     private native int getPredictedClassLabelNative();
-    private native double getMaximumLikelihoodNative();
+    private native double[] getClassLikelihoodsNative();
     private native boolean setHMMTypeNative(int n);
     private native boolean setNumStatesNative(int n);
     private native boolean setNumSymbolsNative(int n);

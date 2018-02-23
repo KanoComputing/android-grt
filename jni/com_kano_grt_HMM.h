@@ -41,10 +41,10 @@ JNIEXPORT jint JNICALL Java_com_kano_grt_HMM_getPredictedClassLabelNative
 
 /*
  * Class:     com_kano_grt_HMM
- * Method:    getMaximumLikelihoodNative
- * Signature: ()D
+ * Method:    getClassLikelihoodsNative
+ * Signature: ()[D
  */
-JNIEXPORT jdouble JNICALL Java_com_kano_grt_HMM_getMaximumLikelihoodNative
+JNIEXPORT jdoubleArray JNICALL Java_com_kano_grt_HMM_getClassLikelihoodsNative
   (JNIEnv *, jobject);
 
 /*
