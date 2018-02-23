@@ -56,7 +56,7 @@ JNIEXPORT jboolean JNICALL Java_com_kano_grt_HMM_setModelTypeNative(JNIEnv *jenv
     return (jboolean) hmm->setModelType((int) n);
 }
 
-JNIEXPORT jboolean JNICALL Java_com_kano_grt_HMM_setMinChangeNative(JNIEnv *jenv, jobject obj, jint n) {
+JNIEXPORT jboolean JNICALL Java_com_kano_grt_HMM_setMinChangeNative(JNIEnv *jenv, jobject obj, jfloat n) {
     GRT::HMM *hmm = Handle<GRT::HMM>::getHandle(jenv, obj);
     return (jboolean) hmm->setMinChange((float) n);
 }
