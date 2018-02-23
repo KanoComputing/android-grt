@@ -9,11 +9,15 @@ JNIEXPORT void JNICALL Java_com_kano_grt_KMeansQuantizer_instantiate(JNIEnv * je
     Handle<GRT::KMeansQuantizer>::setHandle(jenv, obj, t);
 }
 
+JNIEXPORT jboolean JNICALL Java_com_kano_grt_KMeansQuantizer_setNumClustersNative(JNIEnv *jenv, jobject obj, jint n) {
+    GRT::KMeansQuantizer *quantizer = Handle<GRT::KMeansQuantizer>::getHandle(jenv, obj);
+    return (jboolean) quantizer->setNumClusters((int) n);
+}
+
 JNIEXPORT jboolean JNICALL Java_com_kano_grt_KMeansQuantizer_trainNative(JNIEnv *jenv, jobject obj, jobject jtscd){
     GRT::KMeansQuantizer *quantizer = Handle<GRT::KMeansQuantizer>::getHandle(jenv, obj);
     GRT::TimeSeriesClassificationData *tscd = Handle<GRT::TimeSeriesClassificationData>::getHandle(jenv, jtscd);
     return (jboolean) quantizer->train(*tscd);
-
 }
 
 JNIEXPORT jint JNICALL Java_com_kano_grt_KMeansQuantizer_quantizeNative(JNIEnv *jenv, jobject obj, jdoubleArray jdata){

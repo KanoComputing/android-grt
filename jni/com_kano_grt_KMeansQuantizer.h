@@ -17,6 +17,14 @@ JNIEXPORT void JNICALL Java_com_kano_grt_KMeansQuantizer_instantiate
 
 /*
  * Class:     com_kano_grt_KMeansQuantizer
+ * Method:    setNumClustersNative
+ * Signature: (I)Z
+ */
+JNIEXPORT jboolean JNICALL Java_com_kano_grt_KMeansQuantizer_setNumClustersNative
+  (JNIEnv *, jobject, jint);
+
+/*
+ * Class:     com_kano_grt_KMeansQuantizer
  * Method:    trainNative
  * Signature: (Lcom/kano/grt/TimeSeriesClassificationData;)Z
  */
@@ -26,7 +34,7 @@ JNIEXPORT jboolean JNICALL Java_com_kano_grt_KMeansQuantizer_trainNative
 /*
  * Class:     com_kano_grt_KMeansQuantizer
  * Method:    quantizeNative
- * Signature: ([D)Z
+ * Signature: ([D)I
  */
 JNIEXPORT jint JNICALL Java_com_kano_grt_KMeansQuantizer_quantizeNative
   (JNIEnv *, jobject, jdoubleArray);

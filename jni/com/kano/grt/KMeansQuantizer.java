@@ -9,12 +9,14 @@ public class KMeansQuantizer {
         instantiate();
     }
 
+    public boolean setNumClusters(int n) { return setNumClustersNative(n); }
     public boolean train(TimeSeriesClassificationData sample) { return trainNative(sample); }
     public int quantize(double[] data) { return quantizeNative(data); }
     public double[] getFeatureVector() { return getFeatureVectorNative(); }
     public boolean clear() { return clearNative(); }
 
     private native void instantiate();
+    private native boolean setNumClustersNative(int n);
     private native boolean trainNative(TimeSeriesClassificationData sample);
     private native int quantizeNative(double[] data);
     private native double[] getFeatureVectorNative();
