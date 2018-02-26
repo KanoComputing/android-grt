@@ -34,7 +34,7 @@ JNIEXPORT jdoubleArray JNICALL Java_com_kano_grt_HMM_getClassLikelihoodsNative(J
     GRT::VectorFloat vectorReturn = hmm->getClassLikelihoods();
     jdoubleArray result = jenv->NewDoubleArray(vectorReturn.getSize());
     for (unsigned int i = 0; i < vectorReturn.getSize(); i++) {
-        jenv->SetDoubleArrayRegion(result, i, vectorReturn.getSize(), (const jdouble*) &vectorReturn[i] );
+        jenv->SetDoubleArrayRegion(result, i, 1, (const jdouble*) &vectorReturn[i]);
     }
     return result;
 }
