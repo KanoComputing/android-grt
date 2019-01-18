@@ -1,6 +1,8 @@
 # android-grt
 
-Android JNI bindings for GRT
+🚨 Incomplete and unmaintained proof of concept. 🚨
+
+Android JNI bindings for GRT.
 
 ## Using it
 
